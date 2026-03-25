@@ -1,0 +1,35 @@
+#include <stdio.h>
+#include <string.h> // Required for strlen()
+
+/**
+ * Searches for the character 'e' (case-insensitive) in a given string.
+ *
+ * @param str The string to search within.
+ * @return 1 if the character is found, 0 otherwise.
+ */
+int searchForE(char *str) {
+    // Iterate through the string until the null terminator '\0' is reached
+    for (int i = 0; str[i] != '\0'; ++i) { //
+        // Check if the current character is 'e' or 'E'
+        if (str[i] == 'e' || str[i] == 'E') {
+            return 1; // Element found, return true
+        }
+    }
+    return 0; // Element not found after checking the entire string
+}
+
+int main() {
+    char myString[] = "Hello World";
+    
+    // Call the search function
+    int found = searchForE(myString);
+
+    // Print the result
+    if (found) {
+        printf("The character 'e' or 'E' was found in the string: %s\n", myString);
+    } else {
+        printf("The character 'e' or 'E' was not found in the string: %s\n", myString);
+    }
+
+    return 0;
+}
